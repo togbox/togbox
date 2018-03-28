@@ -1,0 +1,75 @@
+<aura:component controller="SuggestionController"  implements="force:appHostable">
+ <aura:handler event="c:displaySuggestionForEdit" action="{!c.handleApplicationEvent}"/>
+ <aura:attribute name="suggestion" type="Suggestion__c"
+     default="{ 'sobjectType': 'Suggestion__c',
+                    'Name': '',
+                    'Suggestion_Category__c': '',
+                    'Suggestion_Description__c': '' }"/>	
+<aura:attribute name="showSave" type="Boolean" default="true"/>  
+<aura:attribute name="showUpdate" type="Boolean" default="false"/>
+<aura:attribute name="showNew" type="Boolean" default="false"/>   
+    
+<aura:handler name="init" action="{!c.doInit}" value="{!this}"/>  
+
+  
+<form class="slds-form--stacked">
+  <fieldset class="slds-box slds-theme--default slds-container--small">
+
+   <!-- PAGE HEADER 
+        put in a separate component -->
+    <div class="slds-page-header" role="banner">
+      <div class="slds-grid">
+        <div class="slds-col">
+          <p class="slds-text-heading--label">Suggestions</p>
+          <h1 class="slds-text-heading--medium">Hot Suggestions</h1>
+        </div>
+      </div>
+    </div>
+
+        <div class="slds-form-element slds-is-required">
+          <div class="slds-form-element__control">
+              	<ui:inputText aura:id="suggestionTitle" label="Suggestion Title"
+                  class="slds-input"
+                  labelClass="slds-form-element__label"
+                  value="{!v.suggestion.Name}"
+                  required="true" placeholder="New suggestion title"/>
+           </div>
+      </div> 
+
+      <div class="slds-form-element slds-is-required">
+				<ui:inputSelect aura:id="suggestionCategoryList" class="slds-input"
+                  labelClass="slds-form-element__label" label="Suggestion Category" value="{!v.suggestion.Suggestion_Category__c}">
+				</ui:inputSelect>
+      </div>
+
+      <div class="slds-form-element slds-is-required">
+          <div class="slds-form-element__control">
+               	<ui:inputTextArea aura:id="suggestionDescription" label="Suggestion Description"
+                  class="slds-input" rows="3"
+                  labelClass="slds-form-element__label"
+                  value="{!v.suggestion.Suggestion_Description__c}"
+                  required="true"/> 
+          	</div>
+    	</div>
+
+      <div class="slds-form-element__control">
+            <aura:if isTrue="{!v.showUpdate}">
+            <ui:button aura:id="updateButton" label="Update"
+                  class="slds-input"
+                  press="{!c.upsert}"/> 
+            </aura:if>
+            <aura:if isTrue="{!v.showSave}">
+            <ui:button aura:id="saveButton" label="Save"
+                  class="slds-input"
+                  press="{!c.new}"/> 
+          </aura:if>
+          <aura:if isTrue="{!v.showNew}">
+           <ui:button aura:id="newButton" label="New"
+                  class="slds-input"
+                  press="{!c.resetForm}"/> 
+          </aura:if>
+      </div>
+
+</fieldset>
+</form>
+</aura:component>

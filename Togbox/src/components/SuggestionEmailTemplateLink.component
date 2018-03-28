@@ -1,0 +1,4 @@
+<apex:component controller="SuggestionEmailTemplateController" access="global">
+<apex:attribute name="SuggId" type="Id" description="Id of the suggestion" assignTo="{!suggestionId}"/>
+<a href="{!suggestionLink}">{!suggestionLink}</a>
+</apex:component>

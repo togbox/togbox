@@ -1,0 +1,6 @@
+<apex:page standardController="Contact" recordSetVar="contacts">
+    <apex:repeat value="{!contacts}" var="c" id="repeater">
+    <!--<li class="list-group-item">C</li>-->
+    C<apex:outputText value="{!c}"/>
+</apex:repeat>
+</apex:page>

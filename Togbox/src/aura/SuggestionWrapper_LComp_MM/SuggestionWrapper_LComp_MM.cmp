@@ -1,0 +1,4 @@
+<aura:component >
+	<c:Suggestion_LComp_MM />
+    <c:SuggestionList_LComp_MM />
+</aura:component>

@@ -1,0 +1,4 @@
+<!-- displaySuggestionForEdit -->
+<aura:event type="APPLICATION">
+    <aura:attribute name="suggestion" type="Suggestion__c"/>
+</aura:event>

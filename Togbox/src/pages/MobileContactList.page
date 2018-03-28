@@ -1,0 +1,25 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false"
+    docType="html-5.0" applyHtmlTag="false" applyBodyTag="false" standardController="Contact" recordSetVar="contacts">
+
+<html>
+<head>
+<apex:slds />    
+</head>
+<body>
+<div class="slds-scope">
+
+<apex:repeat value="{!contacts}" var="c" id="repeater">
+    <!--<li class="list-group-item">{!c.Name}</li>-->
+<dl class="slds-list_horizontal slds-wrap">
+  <dt title="Name" class="slds-item_label slds-text-color_weak slds-truncate">Name:</dt>
+  <dd title="Description for first label" class="slds-item_detail slds-truncate">{!c.Name}</dd>
+  <dt title="Phone" class="slds-item_label slds-text-color_weak slds-truncate">Phone:</dt>
+  <dd title="Description for second label" class="slds-item_detail slds-truncate">{!c.Phone}</dd>
+</dl>
+<br/>
+</apex:repeat>
+
+    </div>
+</body>
+</html>
+</apex:page>

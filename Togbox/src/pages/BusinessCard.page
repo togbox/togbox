@@ -1,0 +1,10 @@
+<apex:page >
+  <h1>Business Card</h1>
+   <p>The user is:{!$User.Title} {!$User.FirstName} {!$User.LastName}</p>
+   <p>Email   
+      {!$User.Email}</p>
+    
+       <p>Phone   
+      {!$User.Phone}</p>
+    
+</apex:page>

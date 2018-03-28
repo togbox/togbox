@@ -1,0 +1,14 @@
+<apex:page docType="html-5.0" standardController="Contact" title="Assistant Details">
+
+    <script src='/canvas/sdk/js/publisher.js'></script>
+<!--
+    <apex:remoteObjects>
+        <apex:remoteObjectModel name="Contact" fields="Id,Name"/>
+    </apex:remoteObjects>
+-->   
+    <div class="mypage">
+        <div>Assistant: {!Contact.AssistantName}</div>
+        <div>Assistant phone number: <a href="tel:{!Contact.AssistantPhone}">{!Contact.AssistantPhone}</a></div>
+    </div>
+
+</apex:page>

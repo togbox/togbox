@@ -1,0 +1,21 @@
+<!-- SuggestionListPanel_LComp_MM.cmp -->
+<aura:component >
+    <aura:registerEvent name="displayForEdit" type="c:displaySuggestionForEdit"/>
+    <aura:attribute name="suggestion" type="Suggestion__c"/>
+ 	<p>Name:
+        <ui:outputText value="{!v.suggestion.Name}"/>
+    </p>
+    
+    <p>Description:
+        <ui:outputText value="{!v.suggestion.Suggestion_Description__c}"/>
+    </p>
+
+        <p>Category:
+        <ui:outputText value="{!v.suggestion.Suggestion_Category__c}"/>
+    </p>
+    <!-- want to redirect to edit form 
+    https://developer.salesforce.com/forums/?id=906F0000000Az3jIAC -->
+
+    <ui:button label="Edit" press="{!c.edit}"/>
+	
+</aura:component>

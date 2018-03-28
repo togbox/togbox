@@ -1,0 +1,6 @@
+<apex:page docType="html-5.0" title="Hello World">
+    <div class="mypage">
+    <h2>Hello mobile world</h2>
+    <ul id="accountList"/>
+</div>   
+</apex:page>

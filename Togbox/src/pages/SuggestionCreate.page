@@ -1,0 +1,18 @@
+<apex:page controller="SuggestionAttachFile">
+    <apex:form >
+                
+              <apex:pageBlock title="New Suggestion">
+             <apex:pageMessages />
+              <apex:pageBlockButtons >
+                  <apex:commandButton value="Save" action="{!saveSuggestion}"/>
+              </apex:pageBlockButtons>
+              <apex:pageBlockSection >
+                  <!--apex:outputText>{!$User.LastName}</apex:outputText>-->
+                  <apex:inputField value="{!newSuggestion.Name}"/>
+                  <apex:inputField value="{!newSuggestion.Suggestion_Category__c}"/>
+                  <apex:inputField value="{!newSuggestion.Suggestion_Description__c}"/>
+                  <apex:inputFile value="{!suggestionAttachment.body}" filename="{!suggestionAttachment.name}"></apex:inputFile>
+              </apex:pageBlockSection>
+          </apex:pageBlock>
+    </apex:form>
+</apex:page>
